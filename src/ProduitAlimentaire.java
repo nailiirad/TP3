@@ -26,8 +26,16 @@ public class ProduitAlimentaire {
         System.out.println("Date d'Expiration : " + (dateExpiration != null ? dateExpiration : "Non spécifiée"));
     }
 
+    public double getPrix() {
+        return prix;
+    }
+
     public void setPrix(double nouveauPrix) {
-        prix = nouveauPrix;
+        if (prix >= 0) {
+            this.prix = nouveauPrix;
+        } else {
+            System.out.println("Le prix ne peut pas être négatif. Le prix n'a pas été modifié.");
+        }
     }
     public void setMarque(String nouveauMarque) {
         marque = nouveauMarque;
